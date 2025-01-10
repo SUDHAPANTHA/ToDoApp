@@ -21,4 +21,5 @@ from todo_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.todo_list),
+    path("delete/<int:id>/", views.todo_delete)
 ]
