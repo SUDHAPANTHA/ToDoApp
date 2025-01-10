@@ -1,9 +1,9 @@
 <h1>Welcome To My ToDo App</h1>
-<a href=""><button>Create</button></a>
+<a href="/create/"><button>Create</button></a>
 {% for todo in todos %}
 <p>{{todo.title}}</p>
 <a href=""><button>Update</button></a>
 
-<a href=""><button>Delete</button></a>
+<a href="/delete/{{todo.id}}/"><button>Delete</button></a>
 
 {% endfor %}
