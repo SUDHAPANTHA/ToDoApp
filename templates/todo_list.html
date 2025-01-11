@@ -1,7 +1,56 @@
-<h1>Welcome To My ToDo App</h1>
-<a href="/create/"><button>Create</button></a>
-{% for todo in todos %}
-<p>{{todo.title}}</p>
-<a href="/update/{{todo.id}}/"><button>Update</button></a>
-<a href="/delete/{{todo.id}}/"><button>Delete</button></a>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to My ToDo App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Container for the main content -->
+    <div class="max-w-4xl mx-auto p-6">
+      <h1 class="text-4xl font-bold text-center text-red-600 mb-8">
+        Welcome To My ToDo App
+      </h1>
+
+      <!-- Create button -->
+      <div class="text-center mb-6">
+        <a href="/create/">
+          <button
+            class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
+          >
+            Create New Task
+          </button>
+        </a>
+      </div>
+
+      <!-- Display ToDo items -->
+      <div class="space-y-4">
+        {% for todo in todos %}
+        <div
+          class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+        >
+          <p class="text-lg font-medium text-gray-800">{{ todo.title }}</p>
+
+          <div class="space-x-4">
+            <a href="/update/{{ todo.id }}/">
+              <button
+                class="bg-lime-500 text-white py-1 px-3 rounded-lg hover:bg-yellow-600 transition duration-300"
+              >
+                Update
+              </button>
+            </a>
+            <a href="/delete/{{ todo.id }}/">
+              <button
+                class="bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-600 transition duration-300"
+              >
+                Delete
+              </button>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

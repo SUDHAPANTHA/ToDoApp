@@ -1,5 +1,37 @@
-<form action="" method="post">
-  {% csrf_token %}
-  <input type="text" name="title" placeholder="Enter your todo" />
-  <input type="submit" value="Update" />
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div
+      class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md mt-32 justify-between items-center"
+    >
+      <h1 class="text-2xl font-bold text-center text-lime-600 mb-6">
+        Update Task
+      </h1>
+      <form action="/update/" method="post" class="space-y-4">
+        <!-- CSRF Token for Django (ensure this is rendered properly) -->
+        {% csrf_token %}
+        <div>
+          <input
+            type="text"
+            name="title"
+            placeholder="Enter your todo"
+            class="w-full border-2 border-gray-300 rounded-lg p-2 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="Update"
+            class="w-full bg-lime-600 text-white py-2 px-2 rounded-lg font-medium hover:bg-green-700 transition duration-300"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
