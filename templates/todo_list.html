@@ -2,8 +2,6 @@
 <a href="/create/"><button>Create</button></a>
 {% for todo in todos %}
 <p>{{todo.title}}</p>
-<a href=""><button>Update</button></a>
-
+<a href="/update/{{todo.id}}/"><button>Update</button></a>
 <a href="/delete/{{todo.id}}/"><button>Delete</button></a>
-
 {% endfor %}
